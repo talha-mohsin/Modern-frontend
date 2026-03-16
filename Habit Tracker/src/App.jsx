@@ -15,10 +15,6 @@ function App() {
     setHabitsData([...habitsData, { habit, time }]);
   }
 
-  // ----------------------------------------------------------->>>>>>>>>>>>>>>>
-  // Q: why here spread operator is mendatory, why we cannot change to original arr even I am updating function again setHabitsData(habitsData)?
-  // ----------------------------------------------------------->>>>>>>>>>>>>>>>
-
   // habitEditHandler
   function habitEditHandler(i) {
     const newHabitsData = [...habitsData];
@@ -63,8 +59,7 @@ function App() {
         {habitsData.map((data, i) => {
           return (
             <li key={i}>
-              {data.habit}
-              {data.time}
+              {data.habit} - {data.time}
               <button onClick={() => habitEditHandler(i)}>Edit</button>
               <button onClick={() => habitDeleteHandler(i)}>Remove</button>
             </li>
